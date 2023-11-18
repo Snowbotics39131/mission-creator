@@ -3,8 +3,10 @@ name = "mission-creator"
 version = "0.0.0"
 edition = "2021"
 license = "GPL-3.0-only"
+license-file = "COPYING"
 description = "[Do not download] Graphically create missions for Snowbotics Framework."
 repository = "https://github.com/Snowbotics39131/mission-creator"
+categories = ["development-tools", "science::robotics", "config"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
