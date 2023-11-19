@@ -1,5 +1,5 @@
 use gtk::prelude::*;
-use gtk::{self, glib, Application, ApplicationWindow, Orientation, Button, Label};
+use gtk::{self, glib, Application, ApplicationWindow, Orientation, Button, Label, Arrow};
 const APP_ID: &str = "org.Snowbotics39131.mission_creator";
 fn main() -> glib::ExitCode {
     let app = Application::builder().application_id(APP_ID).build();
@@ -19,11 +19,15 @@ fn build_ui(app: &Application) {
     let up_down_box = gtk::Box::builder()
         .orientation(Orientation::Vertical)
         .build();
-    let up_button = Button::builder()
+    /*let up_button = Button::builder()
         .label("^")
         .build();
     let down_button = Button::builder()
         .label("v")
+        .build();*/
+    let up_button = Arrow::new()
+        .build();
+    let down_button = Arrow::new()
         .build();
     let delete_button = Button::builder()
         .label("X")
