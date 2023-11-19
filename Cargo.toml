@@ -1,9 +1,9 @@
 [package]
 name = "mission-creator"
-version = "0.0.0"
+version = "0.1.0"
 edition = "2021"
 license = "GPL-3.0-only"
-description = "[Do not download] Graphically create missions for Snowbotics Framework."
+description = "Graphically create missions for Snowbotics Framework."
 repository = "https://github.com/Snowbotics39131/mission-creator"
 categories = ["development-tools", "science::robotics", "config"]
 keywords = ["fll", "lego", "pybricks"]
