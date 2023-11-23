@@ -18,6 +18,7 @@ use gtk::glib;
 use gtk::Orientation;
 use gtk::Label;
 use gtk::Button;
+use gtk::prelude::BoxExt;
 glib::wrapper! {
     pub struct ActionWidget(ObjectSubclass<imp::ActionWidget>)
         @extends gtk::Box, gtk::Widget;
