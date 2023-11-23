@@ -13,12 +13,8 @@ mod imp {
     impl WidgetImpl for ActionWidget {}
     impl BoxImpl for ActionWidget {}
 }
+use gtk::{glib, Orientation, Button, prelude::BoxExt, DropDown};
 use glib::Object;
-use gtk::glib;
-use gtk::Orientation;
-use gtk::Button;
-use gtk::prelude::BoxExt;
-use gtk::DropDown;
 glib::wrapper! {
     pub struct ActionWidget(ObjectSubclass<imp::ActionWidget>)
         @extends gtk::Box, gtk::Widget;
