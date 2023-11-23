@@ -14,35 +14,9 @@ fn build_ui(app: &Application) {
     let compile_button = Button::builder()
         .label("Compile to Python")
         .build();
-    /*let action_box = gtk::Box::builder()
-        .orientation(Orientation::Horizontal)
-        .build();*/
-    /*let action_box = action_widget::ActionWidget::with_orientation(Orientation::Horizontal);
-    let add_button = Button::builder()
-        .label("+")
-        .build();
-    let action_label = DropDown::from_strings(&actions.as_slice());
-    let up_down_box = gtk::Box::builder()
-        .orientation(Orientation::Vertical)
-        .build();
-    let up_button = Button::builder()
-        .label("^")
-        .build();
-    let down_button = Button::builder()
-        .label("v")
-        .build();
-    let delete_button = Button::builder()
-        .label("X")
-        .build();*/
     let add_action_button = Button::builder()
         .label("+")
         .build();
-    /*up_down_box.append(&up_button);
-    up_down_box.append(&down_button);
-    action_box.append(&add_button);
-    action_box.append(&action_label);
-    action_box.append(&up_down_box);
-    action_box.append(&delete_button);*/
     let action_box = action_widget::ActionWidget::new();
     main_box.append(&compile_button);
     main_box.append(&action_box);
