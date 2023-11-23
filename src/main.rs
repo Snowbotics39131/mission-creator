@@ -18,7 +18,7 @@ fn build_ui(app: &Application) {
     /*let action_box = gtk::Box::builder()
         .orientation(Orientation::Horizontal)
         .build();*/
-    let action_box = action_widget::ActionWidget::with_orientation(Orientation::Horizontal);
+    /*let action_box = action_widget::ActionWidget::with_orientation(Orientation::Horizontal);
     let add_button = Button::builder()
         .label("+")
         .build();
@@ -34,16 +34,17 @@ fn build_ui(app: &Application) {
         .build();
     let delete_button = Button::builder()
         .label("X")
-        .build();
+        .build();*/
     let add_action_button = Button::builder()
         .label("+")
         .build();
-    up_down_box.append(&up_button);
+    /*up_down_box.append(&up_button);
     up_down_box.append(&down_button);
     action_box.append(&add_button);
     action_box.append(&action_label);
     action_box.append(&up_down_box);
-    action_box.append(&delete_button);
+    action_box.append(&delete_button);*/
+    let action_box = action_widget::ActionWidget::new();
     main_box.append(&compile_button);
     main_box.append(&action_box);
     main_box.append(&add_action_button);

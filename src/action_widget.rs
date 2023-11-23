@@ -16,17 +16,28 @@ mod imp {
 use glib::Object;
 use gtk::glib;
 use gtk::Orientation;
+use gtk::Label;
+use gtk::Button;
 glib::wrapper! {
     pub struct ActionWidget(ObjectSubclass<imp::ActionWidget>)
         @extends gtk::Box, gtk::Widget;
 }
 impl ActionWidget {
     pub fn new() -> Self {
-        Object::builder().build()
+        let output: Self = Object::builder().property("orientation", Orientation::Horizontal).build();
+        let add_button = Button::builder()
+            .label("+")
+            .build();
+        let label = Label::builder()
+            .label("example action")
+            .build();
+        output.append(&add_button);
+        output.append(&label);
+        output
     }
-    pub fn with_orientation(orientation: Orientation) -> Self {
+    /*pub fn with_orientation(orientation: Orientation) -> Self {
         Object::builder().property("orientation", orientation).build()
-    }
+    }*/
 }
 impl Default for ActionWidget {
     fn default() -> Self {
