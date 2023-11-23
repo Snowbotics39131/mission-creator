@@ -1,5 +1,6 @@
 use gtk::prelude::*;
 use gtk::{self, glib, Application, ApplicationWindow, Orientation, Button, DropDown};
+mod action_widget;
 const APP_ID: &str = "org.Snowbotics39131.mission_creator";
 fn main() -> glib::ExitCode {
     let app = Application::builder().application_id(APP_ID).build();
@@ -14,9 +15,10 @@ fn build_ui(app: &Application) {
     let compile_button = Button::builder()
         .label("Compile to Python")
         .build();
-    let action_box = gtk::Box::builder()
+    /*let action_box = gtk::Box::builder()
         .orientation(Orientation::Horizontal)
-        .build();
+        .build();*/
+    let action_box = action_widget::ActionWidget::with_orientation(Orientation::Horizontal);
     let add_button = Button::builder()
         .label("+")
         .build();
