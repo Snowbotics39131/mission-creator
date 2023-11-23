@@ -51,9 +51,6 @@ impl ActionWidget {
         output.append(&delete_button);
         output
     }
-    /*pub fn with_orientation(orientation: Orientation) -> Self {
-        Object::builder().property("orientation", orientation).build()
-    }*/
 }
 impl Default for ActionWidget {
     fn default() -> Self {
