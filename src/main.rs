@@ -1,5 +1,5 @@
 use gtk::prelude::*;
-use gtk::{self, glib, Application, ApplicationWindow, Orientation, Button, DropDown};
+use gtk::{self, glib, Application, ApplicationWindow, Orientation, Button};
 mod action_widget;
 const APP_ID: &str = "org.Snowbotics39131.mission_creator";
 fn main() -> glib::ExitCode {
@@ -8,7 +8,6 @@ fn main() -> glib::ExitCode {
     app.run()
 }
 fn build_ui(app: &Application) {
-    let actions = ["DriveStraightAction", "DriveTurnAction", "DriveCurveAction"];
     let main_box = gtk::Box::builder()
         .orientation(Orientation::Vertical)
         .build();
