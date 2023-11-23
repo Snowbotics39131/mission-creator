@@ -12,16 +12,18 @@ fn build_ui(app: &Application) {
     let main_box = gtk::Box::builder()
         .orientation(Orientation::Vertical)
         .build();
+    let action_box = gtk::Box::builder()
+        .orientation(Orientation::Vertical)
+        .build();
     let compile_button = Button::builder()
         .label("Compile to Python")
         .build();
     let add_action_button = Button::builder()
         .label("+")
         .build();
-    add_action_button.connect_clicked(clone!(@weak main_box => move |_| {
-        main_box.append(&action_widget::ActionWidget::new());
+    add_action_button.connect_clicked(clone!(@weak action_box => move |_| {
+        action_box.append(&action_widget::ActionWidget::new());
     }));
-    let action_box = action_widget::ActionWidget::new();
     main_box.append(&compile_button);
     main_box.append(&action_box);
     main_box.append(&add_action_button);
