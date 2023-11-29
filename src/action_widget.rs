@@ -13,8 +13,8 @@ mod imp {
     impl WidgetImpl for ActionWidget {}
     impl BoxImpl for ActionWidget {}
 }
-use gtk::{glib, Orientation, Button, prelude::BoxExt, DropDown};
-use glib::Object;
+use gtk::{glib, Orientation, Button, prelude::BoxExt, DropDown, prelude::ButtonExt, prelude::WidgetExt};
+use glib::{clone, Object};
 glib::wrapper! {
     pub struct ActionWidget(ObjectSubclass<imp::ActionWidget>)
         @extends gtk::Box, gtk::Widget;
@@ -39,6 +39,9 @@ impl ActionWidget {
         let delete_button = Button::builder()
             .label("X")
             .build();
+        delete_button.connect_clicked(clone!(@weak output => move |_| {
+            output.set_visible(false); 
+        }));
         up_down_box.append(&up_button);
         up_down_box.append(&down_button);
         output.append(&add_button);
